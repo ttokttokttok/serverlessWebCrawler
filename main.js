@@ -19,7 +19,7 @@ async function main() {
   printReport(pages)
 }
 
-async function asap() {
+async function youtubeRetrieval() {
   if (process.argv.length < 3) {
     console.log('no website provided')
     process.exit(1)
@@ -40,4 +40,4 @@ async function asap() {
 }
 
 // main()
-asap()
+youtubeRetrieval()
