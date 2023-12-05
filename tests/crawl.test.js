@@ -31,6 +31,13 @@ test('normalizeURL strip http', ()=>{
   expect(actual).toEqual(expected)
 })
 
+test('normalizeURL query', ()=>{
+  const input = 'https://www.youtube.com/results?search_query=tft'
+  const actual = normalizeURL(input)
+  const expected = 'www.youtube.com/results?search_query=tft'
+  expect(actual).toEqual(expected)
+})
+
 test('getURLsFromHTML absolute', ()=>{
   const inputHTMLBody = `
   <html>

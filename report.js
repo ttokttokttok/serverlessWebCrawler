@@ -25,6 +25,31 @@ function sortPages(pages){
   return pagesArr
 }
 
+function sortvids(arr) {
+  arr.sort((a, b) => {
+    let viewCountA = parseInt(a[1].viewCount);
+    let viewCountB = parseInt(b[1].viewCount);
+  
+    let likeCountA = parseInt(a[1].likeCount);
+    let likeCountB = parseInt(b[1].likeCount);
+  
+    if (viewCountA < viewCountB) {
+      return 1;
+    } else if (viewCountA > viewCountB) {
+      return -1;
+    } else {
+      if (likeCountA < likeCountB) {
+        return 1;
+      } else if (likeCountA > likeCountB) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }
+  });
+  return arr
+}
+
 module.exports = {
-  sortPages, printReport
+  sortPages, printReport, sortvids
 }
